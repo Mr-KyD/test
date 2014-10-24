@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.wallpaper     = "/home/ferb/fotos/imagenes/luffy_one_piece.jpg"
+theme.wallpaper     = "~/imagenes/luffy_one_piece.jpg"
 theme.font          = "Dejavu Sans Mono 8"
 themes_dir          = os.getenv("HOME") .. "/.config/awesome/themes/dot"
 
@@ -113,6 +113,6 @@ theme.widget_arrl_ld       = themes_dir .. "/wibox_icons/separador3.png"
 -----------------------
 -- The menu icon
 --theme.awesome_icon = "/wibox_icons/sf.png"
-theme.awesome_icon = "/home/ferb/.icons/gentoo/gentoo-icon-01.png"
+theme.awesome_icon = "~/.icons/gentoo/gentoo-icon-01.png"
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
