@@ -45,7 +45,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/ferb/.config/awesome/themes/dot/theme.lua")
+beautiful.init("~/.config/awesome/themes/dot/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
@@ -67,8 +67,8 @@ local layouts =
 --    awful.layout.suit.tile,					--2
 --    awful.layout.suit.tile.left,			--3
 --    awful.layout.suit.tile.bottom,		--4
---    awful.layout.suit.tile.top,			--5
-    awful.layout.suit.fair,					--6
+    awful.layout.suit.tile.top,			--5
+--    awful.layout.suit.fair,					--6
 --    awful.layout.suit.fair.horizontal,	--7
 --    awful.layout.suit.spiral,				--8
 --    awful.layout.suit.spiral.dwindle,	--9
@@ -90,7 +90,7 @@ end
 -- Define a tag table which hold all screen tags.
 tags = {
 	names = {"F", "U", "N", "T", "O", "O"},
-	layout = { layouts[1], layouts[1], layouts[2], layouts[1], layouts[1], layouts[1] },
+	layout = { layouts[1], layouts[1], layouts[2], layouts[1], layouts[2], layouts[1] },
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -113,7 +113,7 @@ myterminals= {
 }
 
 mywebclient = {
-				{ "Firefox", "/usr/bin/firefox-bin" },
+				{ "Firefox", "/usr/bin/firefox" },
 				{ "Chromium", "/usr/bin/chromium" }
 			}
 
@@ -338,7 +338,7 @@ vicious.register(root_widget,vicious.widgets.fs,"${/ used_gb}GB / ${/ size_gb}GB
 home_icon = wibox.widget.imagebox()
 home_icon:set_image(beautiful.widget_home)
 home_widget = wibox.widget.textbox()
-vicious.register(home_widget,vicious.widgets.fs,"${/home/ferb used_gb}GB / ${/home/ferb size_gb}GB",599)
+vicious.register(home_widget,vicious.widgets.fs,"${/home used_gb}GB / ${/home size_gb}GB",599)
 home_widget:buttons( awful.button({ }, 1, function () awful.util.spawn(uterminal .. " -g 120x25+250+250 -e htop") end) )
 -- }}}
 
@@ -682,8 +682,10 @@ awful.rules.rules = {
      { rule = { class = "XTerm" },properties = { tag = tags[1][3] } },
      { rule = { class = "Claws-mail" },properties = { tag = tags[1][4] } },
      { rule = { class = "Xfburn" },properties = { tag = tags[1][4] } },
+     { rule = { class = "Skype" },properties = { tag = tags[1][4] } },
      { rule = { class = "Pidgin" },properties = { tag = tags[1][5] } },
      { rule = { class = "Acroread" },properties = { tag = tags[1][5] } },
+     { rule = { class = "Spotify" },properties = { tag = tags[1][6] } },
      { rule = { class = "jd-Main" },properties = { tag = tags[1][6] } },
      { rule = { class = "jd-update-Main" },properties = { tag = tags[1][6] } },
 
