@@ -107,7 +107,7 @@ myawesomemenu = {
 }
 
 myterminals= {
-				{ "Terminator", "/usr/bin/terminator" },
+--				{ "Terminator", "/usr/bin/terminator" },
 				{ "Xterm", "/usr/bin/xterm" },
 				{ "Urxvt", "/usr/bin/urxvt" }
 }
@@ -132,6 +132,10 @@ mygames = {
 			{ "Steam", "STEAM_RUNTIME=1 /usr/bin/steam"}
 	}
 
+mypelis = {
+			{ "PopCorn", "Popcorn-Time"}
+	}
+
 mydonwloads = {
 		{"Jdonwloader","/usr/bin/java -jar ~/.jd/jdupdate.jar NIGHTLY"}
 	}
@@ -146,6 +150,7 @@ mymainmenu = awful.menu({ items = { { "HOME", "/usr/bin/thunar", beautiful.aweso
 												{ "Mail", mymailclient },
 												{ "Office", myoffice },
 												{ "Games", mygames },
+												{ "Pelis", mypelis },
 												{ "awesome", myawesomemenu },
 												{ "Configs", myconfigs }
                                   }
